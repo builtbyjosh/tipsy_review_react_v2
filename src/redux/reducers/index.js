@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-const breweryReducer = (state = null, action) => {
+const breweryReducer = (state = [], action) => {
   switch (action.type) {
     case "FETCH_RAILS_BREWERY":
       return action.payload;
@@ -11,8 +11,6 @@ const breweryReducer = (state = null, action) => {
   }
 };
 
+const rootReducer = combineReducers({ breweries: breweryReducer })
 
-
-export default breweryReducer;
-
-//combineReducers({ placeholder: () => "Change later" });
+export default rootReducer

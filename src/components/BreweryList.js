@@ -3,11 +3,12 @@ import React from "react";
 const BreweryList = (breweries) => {
   return (
     <>
-      {this.props.breweries.map((brewery) => {
+      <h1>hello from the BreweryList</h1>
+      {/* {this.props.breweries.map((brewery) => {
         <div className="item">
           <div className="content">{brewery.name}</div>
         </div>;
-      })}
+      })} */}
     </>
   );
 };

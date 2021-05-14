@@ -1,11 +1,11 @@
 import React from 'react';
 import BreweryReviews from './BreweryReviews';
 
-const BreweryDetails = () => {
+const BreweryDetails = (brewery) => {
   return (
     <div>
       <h1>Brewery Details</h1>
-      <BreweryReviews />
+      <BreweryReviews brewery={brewery}/>
     </div>
   );
 }

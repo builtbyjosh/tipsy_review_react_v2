@@ -1,10 +1,11 @@
 import React from 'react';
-import breweryContainer
+import BreweryContainer from './BreweryContainer';
+
 
 const App = () => {
   return (
     <div className="ui container">
-      <breweryContainer />
+      <BreweryContainer />
     </div>
   );
 }

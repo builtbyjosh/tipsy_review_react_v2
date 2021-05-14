@@ -8,3 +8,9 @@ export const fetchSavedBreweries = () => {
   };
 };
 
+export const selectedBrewery = (brewery) => {
+  return {
+    type: 'SELECTED_BREWERY',
+    payload: brewery
+  }
+}

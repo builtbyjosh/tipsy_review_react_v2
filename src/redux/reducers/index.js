@@ -1,16 +1,26 @@
 import { combineReducers } from "redux";
 
-const breweryReducer = (state = [], action) => {
+const breweriesReducer = (state = [], action) => {
   switch (action.type) {
-    case "FETCH_RAILS_BREWERY":
-      return action.payload;
-    case "BREWERY_SELECTED":
+    case "FETCH_RAILS_BREWERIES":
       return action.payload;
     default:
       return state;
   }
 };
 
-const rootReducer = combineReducers({ breweries: breweryReducer })
+const breweryReducer = (state = [], action) => {
+  switch (action.type) {
+    case "SELECTED_BREWERY":
+      return action.payload;
+    default:
+      return state;
+  }
+};
 
-export default rootReducer
+const rootReducer = combineReducers({
+  breweries: breweriesReducer,
+  selectedBrewery: breweryReducer,
+});
+
+export default rootReducer;

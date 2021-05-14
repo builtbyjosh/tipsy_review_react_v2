@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
 
-const BreweryList = () => {
+const BreweryList = (breweries) => {
   return (
-    <div>
-      <h1>Brewery List</h1>
+    
+    <div className="item">
+      <div className="content">{brewery.name}</div>
     </div>
   );
-}
+};
 
 export default BreweryList;

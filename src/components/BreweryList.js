@@ -2,10 +2,13 @@ import React from "react";
 
 const BreweryList = (breweries) => {
   return (
-    
-    <div className="item">
-      <div className="content">{brewery.name}</div>
-    </div>
+    <>
+      {this.props.breweries.map((brewery) => {
+        <div className="item">
+          <div className="content">{brewery.name}</div>
+        </div>;
+      })}
+    </>
   );
 };
 

@@ -9,20 +9,13 @@ class BreweryContainer extends Component {
   componentDidMount() {
     this.props.fetchSavedBreweries()
   }
-  renderlist() {
-    return this.props.breweries.map((brewery) => {
-      return (
-        <BreweryList brewery={brewery}
-      );
-    });
-  }
 
   render() {
     return (
       <div className="ui row">
         <div className="column eight wide">
           <div className="ui divided list">
-            <BreweryList />
+            <BreweryList breweris={breweries} />
           </div>          
         </div>
         <div className="column eight wide">

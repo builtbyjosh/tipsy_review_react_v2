@@ -3,23 +3,25 @@ import { connect } from "react-redux";
 
 import BreweryDetails from "./BreweryDetails";
 import BreweryList from "./BreweryList";
-import {fetchSavedBreweries} from "../redux/actions/";
+import { fetchSavedBreweries, selectedBrewery } from "../redux/actions/";
 
 class BreweryContainer extends Component {
   componentDidMount() {
-    this.props.fetchSavedBreweries()
+    this.props.fetchSavedBreweries();
+    
   }
 
   render() {
-    return (
+    return (      
       <div className="ui row">
         <div className="column eight wide">
           <div className="ui divided list">
-            <BreweryList />
-          </div>          
+            <BreweryList breweries={this.props.breweries} />
+            
+          </div>
         </div>
         <div className="column eight wide">
-          <BreweryDetails />
+          <BreweryDetails brewery={this.props.selectedBrewery}/>
         </div>
       </div>
     );
@@ -27,10 +29,12 @@ class BreweryContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-
   return {
-    breweries: state.breweries
+    breweries: state.breweries,
+    selectedBrewery: state.brewery
   };
 };
 
-export default connect(mapStateToProps, { fetchSavedBreweries })(BreweryContainer);
+export default connect(mapStateToProps, { fetchSavedBreweries, selectedBrewery })(
+  BreweryContainer
+);

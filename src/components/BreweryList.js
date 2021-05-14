@@ -7,9 +7,8 @@ const BreweryList = ({ breweries }) => {
       <div className="item" key={brewery.id}>
         <div
           className="content"
-          onClick={() => {
-            console.log("clicked", brewery.name);
-            this.setState(selectedBrewery(brewery));
+          onClick={() => {            
+            selectedBrewery(brewery);
           }}
         >
           {brewery.name}

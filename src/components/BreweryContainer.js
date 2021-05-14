@@ -8,20 +8,34 @@ import { fetchSavedBreweries, selectedBrewery } from "../redux/actions/";
 class BreweryContainer extends Component {
   componentDidMount() {
     this.props.fetchSavedBreweries();
-    
   }
 
   render() {
-    return (      
+    return (
       <div className="ui row">
         <div className="column eight wide">
           <div className="ui divided list">
-            <BreweryList breweries={this.props.breweries} />
-            
+            {/* <BreweryList breweries={this.props.breweries} />             */}
+
+            {this.props.breweries.map((brewery) => {
+              return (
+                <div className="item" key={brewery.id}>
+                  <div
+                    className="content"
+                    onClick={() => {
+                      this.props.selectedBrewery(brewery);
+                    }}
+                  >
+                    {brewery.name}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
+
         <div className="column eight wide">
-          <BreweryDetails brewery={this.props.selectedBrewery}/>
+          <BreweryDetails brewery={this.props.selectedBrewery} />
         </div>
       </div>
     );
@@ -31,10 +45,11 @@ class BreweryContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     breweries: state.breweries,
-    selectedBrewery: state.brewery
+    selectedBrewery: state.brewery,
   };
 };
 
-export default connect(mapStateToProps, { fetchSavedBreweries, selectedBrewery })(
-  BreweryContainer
-);
+export default connect(mapStateToProps, {
+  fetchSavedBreweries,
+  selectedBrewery,
+})(BreweryContainer);

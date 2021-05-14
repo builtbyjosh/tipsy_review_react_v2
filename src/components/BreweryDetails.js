@@ -1,13 +1,19 @@
 import React from "react";
-import { selectedBrewery } from "../redux/actions";
 import BreweryReviews from "./BreweryReviews";
 
 const BreweryDetails = (brewery) => {
+  if (!brewery) {
+    return (
+      <div>
+        <h1>Select A Brewery</h1>
+      </div>
+    );
+  }
   return (
     <div>
-      {console.log(selectedBrewery())}
       {console.log(brewery)}
       <h1>{brewery.name}</h1>
+      <h1>{brewery.city}</h1>
 
       <BreweryReviews />
     </div>

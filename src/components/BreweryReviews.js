@@ -6,7 +6,7 @@ const BreweryReviews = ({ brewery }) => {
     return (
       <div>
         <h1>No Reviews Yet!</h1>
-        
+        <button>Add A Review</button>
       </div>
     );
   }
@@ -21,6 +21,7 @@ const BreweryReviews = ({ brewery }) => {
           </div>
         )
       })}
+      <button>Add A Review</button>
     </div>
   );
 };

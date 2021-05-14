@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import BreweryContainer from "./BreweryContainer";
+import SearchContainer from './SearchContainer'
 
  class App extends Component {
   render() {
@@ -9,6 +10,7 @@ import BreweryContainer from "./BreweryContainer";
       <hr />
       <div className="ui container grid">
         <BreweryContainer />
+        <SearchContainer />
       </div>
       </div>
     )

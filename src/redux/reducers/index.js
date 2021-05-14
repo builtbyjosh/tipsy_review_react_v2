@@ -9,7 +9,7 @@ const breweriesReducer = (state = [], action) => {
   }
 };
 
-const breweryReducer = (state = [], action) => {
+const breweryReducer = (state = null, action) => {
   switch (action.type) {
     case "SELECTED_BREWERY":
       return action.payload;

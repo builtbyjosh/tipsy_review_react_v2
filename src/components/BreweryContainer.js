@@ -10,10 +10,18 @@ class BreweryContainer extends Component {
     this.props.fetchSavedBreweries();
   }
 
+  // handleClick = (e) => {
+  //   e.preventDefault();
+  //   const brewery = this.props.breweries.filter((brewery) => {
+  //     brewery.name === e.target.innerText;
+  //   });
+  //   selectedBrewery: brewery;
+  // };
+
   render() {
     return (
       <div className="ui row">
-        <div className="column eight wide">
+        <div className="column six wide">
           <div className="ui divided list">
             {/* <BreweryList breweries={this.props.breweries} />             */}
 
@@ -22,8 +30,8 @@ class BreweryContainer extends Component {
                 <div className="item" key={brewery.id}>
                   <div
                     className="content"
-                    onClick={() => {
-                      this.props.selectedBrewery(brewery);
+                    onClick={(e) => {
+                      this.props.selectedBrewery(brewery)                      
                     }}
                   >
                     {brewery.name}
@@ -34,8 +42,8 @@ class BreweryContainer extends Component {
           </div>
         </div>
 
-        <div className="column eight wide">
-          <BreweryDetails brewery={this.props.selectedBrewery} />
+        <div className="column ten wide">          
+          <BreweryDetails />
         </div>
       </div>
     );
@@ -45,7 +53,7 @@ class BreweryContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     breweries: state.breweries,
-    selectedBrewery: state.brewery,
+    selectedBrewery: state.selectedBrewery,
   };
 };
 

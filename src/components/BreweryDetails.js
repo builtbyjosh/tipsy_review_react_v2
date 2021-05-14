@@ -1,7 +1,8 @@
 import React from "react";
 import BreweryReviews from "./BreweryReviews";
+import { connect } from "react-redux";
 
-const BreweryDetails = (brewery) => {
+const BreweryDetails = ({ brewery }) => {
   if (!brewery) {
     return (
       <div>
@@ -11,13 +12,17 @@ const BreweryDetails = (brewery) => {
   }
   return (
     <div>
-      {console.log(brewery)}
+      
       <h1>{brewery.name}</h1>
       <h1>{brewery.city}</h1>
 
-      <BreweryReviews />
+      <BreweryReviews brewery={brewery}/>
     </div>
   );
 };
 
-export default BreweryDetails;
+const mapStateToProps = (state) => {
+  return { brewery: state.selectedBrewery };
+};
+
+export default connect(mapStateToProps)(BreweryDetails);

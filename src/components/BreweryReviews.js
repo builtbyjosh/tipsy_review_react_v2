@@ -12,13 +12,12 @@ const BreweryReviews = ({ brewery }) => {
   }
   return (
     <div>
-      <h1>Brewery Reviews</h1>
+      <h1 className='ui header'>Brewery Reviews</h1>
       {brewery.reviews.map((review, i) => {
         return (
-          <div key={i}>            
+          <div key={i} className="ui segment">            
             <p>{review.comment}</p>
             <p>{review.name}</p>
-            <br />
           </div>
         )
       })}

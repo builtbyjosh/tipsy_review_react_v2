@@ -11,12 +11,14 @@ const BreweryDetails = ({ brewery }) => {
     );
   }
   return (
-    <div>
-      
-      <h1>{brewery.name}</h1>
-      <h1>{brewery.city}</h1>
+    <div className="ui">
+      <h1 className='ui'>Details for:</h1>
+      <div className="ui segment">
+        <h4 className='ui header'>{brewery.name}</h4>
+        <p>{brewery.city}</p>
+      </div>
 
-      <BreweryReviews brewery={brewery}/>
+      <BreweryReviews brewery={brewery} />
     </div>
   );
 };

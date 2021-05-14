@@ -24,7 +24,7 @@ class BreweryContainer extends Component {
         <div className="column six wide">
           <div className="ui divided list">
             {/* <BreweryList breweries={this.props.breweries} />             */}
-
+            <h1 className='ui header'>Brewery List</h1>
             {this.props.breweries.map((brewery) => {
               return (
                 <div className="item" key={brewery.id}>
@@ -34,7 +34,7 @@ class BreweryContainer extends Component {
                       this.props.selectedBrewery(brewery)                      
                     }}
                   >
-                    {brewery.name}
+                    <p className="ui header">{brewery.name}</p>
                   </div>
                 </div>
               );

@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from 'react-redux'
 import { selectedBrewery } from "../redux/actions/";
 
 const BreweryList = ({ breweries }) => {
@@ -7,15 +8,18 @@ const BreweryList = ({ breweries }) => {
       <div className="item" key={brewery.id}>
         <div
           className="content"
-          onClick={() => {            
-            selectedBrewery(brewery);
-          }}
+          onClick={() => {this.props.selectedBrewery(brewery); }}
         >
-          {brewery.name}
+          <h3 className="ui header">{brewery.name}</h3>
         </div>
       </div>
     );
   });
 };
 
-export default BreweryList;
+const mapStateToProps = state => {
+  return {breweries: state.breweries}
+}
+
+export default connect(mapStateToProps)(BreweryList);
+

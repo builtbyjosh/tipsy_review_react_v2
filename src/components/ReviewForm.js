@@ -10,8 +10,6 @@ class ReviewForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log(e)    
-    console.log(this.props.brewery)
     console.log(this.state)
   }
 

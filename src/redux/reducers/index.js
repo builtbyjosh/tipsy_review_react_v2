@@ -6,6 +6,8 @@ const breweriesReducer = (state = [], action) => {
       return action.payload;
     case "FETCH_API_BREWERIES":
       return action.payload;
+    case "CREATE_REVIEW":
+      return [...state, action.payload];
     default:
       return state;
   }

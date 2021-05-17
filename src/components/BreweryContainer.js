@@ -23,7 +23,6 @@ class BreweryContainer extends Component {
       <div className="ui row">
         <div className="column six wide">
           <div className="ui divided list">
-            {/* <BreweryList breweries={this.props.breweries} />             */}
             <h1 className='ui header'>Brewery List</h1>
             {this.props.breweries.map((brewery) => {
               return (

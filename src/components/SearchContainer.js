@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import { fetchAPIBreweries, selectedBrewery } from "../redux/actions/";
 import BreweryDetails from "./BreweryDetails";
+import BreweryList from "./BreweryList";
 
 class SearchContainer extends Component {
   componentDidMount() {
@@ -16,20 +17,7 @@ class SearchContainer extends Component {
           <div className="column six wide">
             <div className="ui divided list">
               <h1 className="ui header">Search Results</h1>
-              {this.props.breweries.map((brewery) => {
-                return (
-                  <div className="item" key={brewery.id}>
-                    <div
-                      className="content"
-                      onClick={(e) => {
-                        this.props.selectedBrewery(brewery);
-                      }}
-                    >
-                      <p className="ui header">{brewery.name}</p>
-                    </div>
-                  </div>
-                );
-              })}
+              <BreweryList />
             </div>
           </div>
           <div className="column ten wide">

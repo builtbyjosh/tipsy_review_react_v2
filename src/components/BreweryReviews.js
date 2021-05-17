@@ -10,15 +10,14 @@ const BreweryReviews = ({ brewery }) => {
     return (
       <div>
         <h1>No Reviews Yet!</h1>
-        <button
-        onClick={handleClick}>Add A Review</button>
-        <ReviewForm />
+        <ReviewForm brewery={brewery}/>
       </div>
     );
   }
   return (
     <div>
       <h1 className="ui header">Brewery Reviews</h1>
+      <ReviewForm brewery={brewery}/>
       {brewery.reviews.map((review, i) => {
         return (
           <div key={i} className="ui segment">
@@ -27,7 +26,6 @@ const BreweryReviews = ({ brewery }) => {
           </div>
         );
       })}
-      <button onClick={handleClick}>Add A Review</button>
     </div>
   );
 };

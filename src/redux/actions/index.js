@@ -9,7 +9,7 @@ export const fetchSavedBreweries = () => {
   };
 };
 
-export const fetchAPIBreweries = (query = "holland") => {
+export const fetchAPIBreweries = (query) => {
   return async (dispatch) => {
     const res = await apiFetch.get(`/search?query=${query}`);
     dispatch({ type: "FETCH_API_BREWERIES", payload: res.data });
@@ -22,3 +22,7 @@ export const selectedBrewery = (brewery) => {
     payload: brewery,
   };
 };
+
+// export const createReview = (newReview) => {
+//   return (dispatch) =
+// }

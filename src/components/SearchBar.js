@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class SearchBar extends Component {
   state = { query: "" };
@@ -8,10 +8,9 @@ class SearchBar extends Component {
   };
 
   onFormSubmit = (e) => {
-    e.preventDefault()
-    this.props.onFormSubmit(this.state.query)
-    console.log(this.state.query)    
-  }
+    e.preventDefault();
+    this.props.onFormSubmit(this.state.query);
+  };
 
   render() {
     return (

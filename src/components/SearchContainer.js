@@ -7,6 +7,10 @@ import BreweryList from "./BreweryList";
 import SearchBar from "./SearchBar";
 
 class SearchContainer extends Component {
+  // componentDidMount() {
+  //   this.props.onQuerySubmit('holland');
+  // }
+
   onSearchSubmit = (query) => {
     this.props.fetchAPIBreweries(query);
   };
@@ -15,14 +19,9 @@ class SearchContainer extends Component {
     return (
       <>
         <div className="ui row">
-          <div className="column twelve wide">
-            <SearchBar onFormSubmit={this.onSearchSubmit} />
-          </div>
-        </div>
-        <div className="ui row">
           <div className="column six wide">
             <div className="ui divided list">
-              <h1 className="ui header">Search Results</h1>
+              <SearchBar onFormSubmit={this.onSearchSubmit} />
               <BreweryList />
             </div>
           </div>
@@ -41,4 +40,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { selectedBrewery })(SearchContainer);
+export default connect(mapStateToProps, { fetchAPIBreweries, selectedBrewery })(
+  SearchContainer
+);

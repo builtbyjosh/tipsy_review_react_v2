@@ -7,8 +7,8 @@ class BreweryList extends Component {
     {
       if (this.props.breweries.length > 0) {
         return (
-          <div>
-            <h1>Search Results: {this.props.breweries.length}</h1>
+          <>
+            <h2>Search Results: {this.props.breweries.length}</h2>
             {this.props.breweries.map((brewery) => {
               return (
                 <div className="item" key={brewery.id}>
@@ -23,7 +23,7 @@ class BreweryList extends Component {
                 </div>
               );
             })}
-          </div>
+          </>
         );
       }
     }

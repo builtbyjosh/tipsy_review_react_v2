@@ -14,18 +14,16 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div className="ui segment search-bar">
-        <form action="" className="ui form" onSubmit={this.onFormSubmit}>
-          <div className="field">
-            <label>Search:</label>
-            <input
-              type="text"
-              value={this.state.query}
-              onChange={this.onInputChange}
-            />
-          </div>
-        </form>
-      </div>
+      <form action="" className="ui form" onSubmit={this.onFormSubmit}>
+        <div className="field">
+          <label>Search:</label>
+          <input
+            type="text"
+            value={this.state.query}
+            onChange={this.onInputChange}
+          />
+        </div>
+      </form>
     );
   }
 }

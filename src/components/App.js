@@ -9,8 +9,8 @@ import SearchContainer from './SearchContainer'
         <h1 className='ui container'>Brewery Container - eventually going to be nav bar</h1>
       <hr />
       <div className="ui container grid">
-        <BreweryContainer />
-        {/* <SearchContainer /> */}
+        {/* <BreweryContainer /> */}
+        <SearchContainer />
       </div>
       </div>
     )

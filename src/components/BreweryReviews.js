@@ -2,7 +2,7 @@ import React from "react";
 
 const BreweryReviews = ({ brewery }) => {
   
-  if (brewery.reviews.length === 0) {
+  if (!brewery.reviews) {
     return (
       <div>
         <h1>No Reviews Yet!</h1>

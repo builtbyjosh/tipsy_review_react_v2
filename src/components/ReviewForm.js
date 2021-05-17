@@ -7,10 +7,15 @@ class ReviewForm extends Component {
     rating: null,
   };
 
+  handleSubmit = (e) => {
+    e.preventDefault()
+    
+  }
+
   render() {
     return (
       <>
-        <form action="" className="ui form">
+        <form action="" className="ui form" onSubmit={this.handleSubmit}>
           <div className="field">
             <label>Name:</label>
             <input

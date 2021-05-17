@@ -5,11 +5,18 @@ class ReviewForm extends Component {
     name: "",
     comment: "",
     rating: null,
+    brewery_id: this.props.brewery.id
   };
 
   handleSubmit = (e) => {
     e.preventDefault()
-    
+    console.log(e)    
+    console.log(this.props.brewery)
+    console.log(this.state)
+  }
+
+  handleChange = (e) => {
+    this.setState({[e.target.name]: e.target.value})
   }
 
   render() {
@@ -23,6 +30,7 @@ class ReviewForm extends Component {
               name="name"
               id="review-name"
               placeholder="Name"
+              onChange={this.handleChange}
             />
           </div>
           <div className="field">
@@ -32,11 +40,12 @@ class ReviewForm extends Component {
               id="review-comment"
               cols="30"
               rows="4"
+              onChange={this.handleChange}
             ></textarea>
           </div>
           <div className="field">
             <label>Rating: </label>
-            <select className="ui dropdown">
+            <select className="ui dropdown" name='rating' onChange={this.handleChange}>
               <option value="" >1-10</option>
               <option value="1">1</option>
               <option value="2">2</option>

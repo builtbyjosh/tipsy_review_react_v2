@@ -6,8 +6,7 @@ const breweriesReducer = (state = [], action) => {
       return action.payload;
     case "FETCH_API_BREWERIES":
       return action.payload;
-    case "CREATE_REVIEW":
-      return [...state, action.payload];
+
     default:
       return state;
   }
@@ -22,9 +21,19 @@ const selectedBreweryReducer = (state = null, action) => {
   }
 };
 
+const breweryReviewsReducer = (state = [], action) => {
+  switch (action.type) {
+    case "CREATE_REVIEW":
+      return [...state, action.payload];
+    default:
+      return state;
+  }
+};
+
 const rootReducer = combineReducers({
   breweries: breweriesReducer,
   selectedBrewery: selectedBreweryReducer,
+  breweryReviews: breweryReviewsReducer
 });
 
 export default rootReducer;

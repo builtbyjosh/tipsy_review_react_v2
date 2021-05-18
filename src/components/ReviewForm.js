@@ -1,21 +1,24 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
+import { createReview } from "../redux/actions/";
 
 class ReviewForm extends Component {
   state = {
     name: "",
     comment: "",
     rating: null,
-    brewery_id: this.props.brewery.id
+    brewery_id: this.props.brewery.id,
   };
 
   handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(this.state)
-  }
+    e.preventDefault();
+    this.props.createReview(this.state);
+  };
 
   handleChange = (e) => {
-    this.setState({[e.target.name]: e.target.value})
-  }
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
   render() {
     return (
@@ -43,8 +46,12 @@ class ReviewForm extends Component {
           </div>
           <div className="field">
             <label>Rating: </label>
-            <select className="ui dropdown" name='rating' onChange={this.handleChange}>
-              <option value="" >1-10</option>
+            <select
+              className="ui dropdown"
+              name="rating"
+              onChange={this.handleChange}
+            >
+              <option value="">1-10</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -65,4 +72,4 @@ class ReviewForm extends Component {
   }
 }
 
-export default ReviewForm;
+export default connect(null, { createReview })(ReviewForm);

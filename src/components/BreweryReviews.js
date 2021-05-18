@@ -2,10 +2,6 @@ import React from "react";
 import ReviewForm from "./ReviewForm";
 
 const BreweryReviews = ({ brewery }) => {
-  const handleClick = (e) => {
-    console.log(brewery)
-  }
-
   if (!brewery.reviews) {
     return (
       <div>
@@ -29,5 +25,10 @@ const BreweryReviews = ({ brewery }) => {
     </div>
   );
 };
+
+// const mapStateToProps = (state) => {
+//   console.log(state.selectedBrewery)
+//   return { breweryReviews: state.selectedBrewery.reviews };
+// };
 
 export default BreweryReviews;

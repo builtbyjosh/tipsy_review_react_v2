@@ -27,6 +27,7 @@ const BreweryDetails = ({ brewery }) => {
 };
 
 const mapStateToProps = (state) => {
+  
   return { brewery: state.selectedBrewery };
 };
 

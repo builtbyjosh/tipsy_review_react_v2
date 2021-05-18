@@ -27,7 +27,7 @@ class BreweryList extends Component {
         );
       }
     }
-    return <></>
+    return <></>;
   }
 }
 
@@ -36,5 +36,3 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, { selectedBrewery })(BreweryList);
-
-

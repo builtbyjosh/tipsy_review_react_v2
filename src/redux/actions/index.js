@@ -1,6 +1,6 @@
 import railsFetch from "../APIs/railsFetch";
 import apiFetch from '../APIs/apiFetch'
-import apiPost from '../APIs/apiPost'
+
 export const fetchSavedBreweries = () => {
   return async (dispatch) => {
     const res = await railsFetch.get("/breweries");
@@ -25,7 +25,7 @@ export const selectedBrewery = (brewery) => {
 
 export const createReview = newReview => {
   return async (dispatch) => {
-    const res = await apiPost.post('/reviews', {...newReview})
+    const res = await railsFetch.post('/reviews', {...newReview})
     dispatch({type: "CREATE_REVIEW", payload: res.data})
   };
 };

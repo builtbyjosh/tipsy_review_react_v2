@@ -23,6 +23,8 @@ const selectedBreweryReducer = (state = null, action) => {
 
 const breweryReviewsReducer = (state = [], action) => {
   switch (action.type) {
+    case "SELECTED_BREWERY_REVIEW":
+      return action.payload;
     case "CREATE_REVIEW":
       return [...state, action.payload];
     default:
@@ -33,7 +35,7 @@ const breweryReviewsReducer = (state = [], action) => {
 const rootReducer = combineReducers({
   breweries: breweriesReducer,
   selectedBrewery: selectedBreweryReducer,
-  breweryReviews: breweryReviewsReducer
+  breweryReviews: breweryReviewsReducer,
 });
 
 export default rootReducer;

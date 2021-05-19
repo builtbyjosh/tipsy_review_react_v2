@@ -13,7 +13,9 @@ class ReviewForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    console.log(this.props)
     this.props.createReview(this.state);
+
   };
 
   handleChange = (e) => {
@@ -23,6 +25,7 @@ class ReviewForm extends Component {
   render() {
     return (
       <>
+        
         <form action="" className="ui form" onSubmit={this.handleSubmit}>
           <div className="field">
             <label>Name:</label>

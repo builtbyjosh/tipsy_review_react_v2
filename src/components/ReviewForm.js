@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { createReview } from "../redux/actions/";
-
 class ReviewForm extends Component {
   state = {
     name: "",
@@ -13,9 +12,7 @@ class ReviewForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.props)
     this.props.createReview(this.state);
-
   };
 
   handleChange = (e) => {
@@ -25,7 +22,6 @@ class ReviewForm extends Component {
   render() {
     return (
       <>
-        
         <form action="" className="ui form" onSubmit={this.handleSubmit}>
           <div className="field">
             <label>Name:</label>
@@ -67,7 +63,6 @@ class ReviewForm extends Component {
               <option value="10">10</option>
             </select>
           </div>
-
           <button type="submit">Add Review</button>
         </form>
       </>

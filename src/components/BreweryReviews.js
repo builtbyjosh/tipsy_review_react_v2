@@ -3,8 +3,9 @@ import { connect } from "react-redux";
 import { breweryReviews } from "../redux/actions";
 import ReviewForm from "./ReviewForm";
 
-const BreweryReviews = ({ brewery }) => {
-  if (!brewery.reviews) {
+const BreweryReviews = ({ brewery, reviews }) => {
+  console.log(reviews);
+  if (!reviews) {
     return (
       <div>
         <h1>No Reviews Yet!</h1>
@@ -18,7 +19,7 @@ const BreweryReviews = ({ brewery }) => {
       <h1 className="ui header">Brewery Reviews</h1>
       <ReviewForm brewery={brewery} />
 
-      {this.props.breweryReviews.map((review, i) => {
+      {reviews.map((review, i) => {
         return (
           <div key={i} className="ui segment">
             <p>{review.comment}</p>
@@ -30,8 +31,4 @@ const BreweryReviews = ({ brewery }) => {
   );
 };
 
-const mapStateToProps = (state) => {  
-  return { breweryReviews: state.breweryReviews };
-};
-
-export default connect(mapStateToProps, { breweryReviews })(BreweryReviews);
+export default BreweryReviews;

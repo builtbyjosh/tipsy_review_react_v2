@@ -1,10 +1,9 @@
 import React from "react";
-import BreweryReviews from "./BreweryReviews";
+import BreweryReviews2 from "./BreweryReviews2";
 import { connect } from "react-redux";
+import { breweryReviews } from "../redux/actions";
 
 const BreweryDetails = ({ brewery }) => {
-  
-
   if (!brewery) {
     return (
       <div>
@@ -25,15 +24,15 @@ const BreweryDetails = ({ brewery }) => {
         <p>{brewery.avg_rating}</p>
       </div>
 
-      <BreweryReviews brewery={brewery} />
+      <BreweryReviews2 brewery={brewery} />
     </div>
   );
 };
 
-const mapStateToProps = (state,ownProps) => {
+const mapStateToProps = (state) => {
   return {
     brewery: state.selectedBrewery,
-    
+
   };
 };
 
